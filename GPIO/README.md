@@ -23,11 +23,10 @@ Créer un programme **MicroPython** qui permet de faire clignoter une LED à dif
 ---
 
 ## Code source
-Le programme est disponible dans le fichier :  
 
+Le programme est disponible dans le document code sur la page d'accueil.
 
-
-Ce script permet :
+Ce programme  permet :
 - de **faire clignoter la LED à 0,5 Hz** après un premier appui,  
 - de **faire clignoter plus rapidement** après un deuxième appui,  
 - et **d’éteindre la LED** après un troisième appui.
