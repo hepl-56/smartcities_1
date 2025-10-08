@@ -12,7 +12,7 @@ fonction du nombre de pressions sur un bouton poussoir.
 inserer une image du montage + une image de la carte raspberry pi pico
 ## Le code python
 disponible dans le dossier code sur la page d'accueil "code_clignotement_LE.py
-
+---
 ## Tache à réaliser
 -La LED doit clignoter à l’infini avec une fréquence de 0,5 Hz lorsque le bouton poussoir 
 est pressé une fois. 
