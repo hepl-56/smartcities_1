@@ -9,6 +9,9 @@ fonction du nombre de pressions sur un bouton poussoir.
 - Module bouton poussoir 
 - Câbles 
 ## Shéma de branchement
+
+(https://github.com/user-attachments/assets/7493c6af-03f0-4a89-a675-823a38a5ab72)
+
 inserer une image du montage + une image de la carte raspberry pi pico
 ## Le code python
 disponible dans le dossier code sur la page d'accueil "(https://github.com/hepl-56/smartcities_1/commit/f74f5fae0f7b65b633eb844937d1560f82ae4226)"
@@ -21,8 +24,8 @@ disponible dans le dossier code sur la page d'accueil "(https://github.com/hepl-
 - La LED doit s'éteindre lorsque le bouton poussoir est pressé une troisième fois.
 ---
 ## Principe de fonctionnement après la compilation du programme
-inserer une image du dispositif avec la led allumer
--lorsqu'on effectue **une premier préssion** sur le bouton poussoir, la LED clignote lentement.
+
+- lorsqu'on effectue **une premier préssion** sur le bouton poussoir, la LED clignote lentement.
 - Lorsqu'on effectue **une seconde préssion**, la LED clignote rapidement.
 - Lorsqu'on effectue ** une troisième préssion** , la LED s'éteint.
 ---
