@@ -27,28 +27,13 @@ volume est contrôlé par un potentiomètre.
 - En faisant varier l'angle de rotation du potentiomètre, le volume de la note musicale
   varie également.
   la valeur du volume de la mélodie est fonction de la valeur de l'angle de rotation du potentiomètre.
-  
 
-
-
+## test
+- Tourner le potentiométre dans le sens des aiguilles d'une montre: le volume de la mélodie augmente.
+- Touner le potentiométre dans le sens contraire des aiguilles d'une montre: le volume diminue.
 ---
 
-## 🧪 Test et validation
-- Tourner le **potentiomètre** : le volume augmente ou diminue.
-- Appuyer sur le **bouton** : la mélodie 1 est jouée.
-- Relâcher le **bouton** : la mélodie 2 est jouée.
-- La **LED** indique visuellement quand une mélodie est en cours.
-
----
-
-## 💡 Améliorations possibles
-- Ajouter une **troisième mélodie**.
-- Contrôler la **vitesse** de la mélodie avec un deuxième potentiomètre.
-- Ajouter un **afficheur OLED** pour indiquer la mélodie jouée.
-
----
-
-## 👩‍💻 Auteur
+##  Auteur
 Projet réalisé par **Elvira Nganne**  
 Dans le cadre du cours de **MicroPython / Raspberry Pi Pico**
 
