@@ -74,6 +74,8 @@ Raspberry Pi Pico
 ##  Code
 
 Les codes sont disponibles dans le dossier **`CODE`** de ce dépôt :
+\code_mélodie_en_boucle.py
+\code_changement_de_mélodie_bonus.py
 
 
 ```
