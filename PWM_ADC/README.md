@@ -67,7 +67,7 @@ Raspberry Pi Pico
 
 
 **📸 Insérer une image du montage physique ici**
-![Description image PWM_ADC](PWM_ADC/image3.jpeg)
+<img width="444" height="640" alt="image" src="https://github.com/user-attachments/assets/a31e29de-a4f1-4cae-b148-be367c10dd3b" />
 
 ---
 
@@ -122,16 +122,16 @@ La LED s'allume et s'éteint au rythme de la musique :
 
 ---
 
-## 🧪 Tests et validation
+## Tests et validation
 
-### ✅ Test de base
+###  Test de base
 **Test du potentiomètre** :
 - **Tourner le potentiomètre dans le sens des aiguilles d'une montre** : le volume de la mélodie augmente
 - **Tourner le potentiomètre dans le sens contraire des aiguilles d'une montre** : le volume diminue
 - À volume minimum : la mélodie est à peine audible ou silencieuse
 - À volume maximum : la mélodie est clairement audible (50% du duty cycle)
 
-### ✅ Tests Bonus 1
+###  Tests Bonus 1
 **Test du changement de mélodie** :
 - **Premier appui** sur le bouton : passage à "Frère Jacques"
 - **Deuxième appui** : passage à "Mario Bros"
@@ -139,7 +139,7 @@ La LED s'allume et s'éteint au rythme de la musique :
 - Le volume reste contrôlable pendant tous les changements
 - Message affiché dans la console à chaque changement
 
-### ✅ Tests Bonus 2
+### Tests Bonus 2
 **Test de la LED** :
 - La LED clignote en **synchronisation parfaite** avec chaque note
 - La LED reste **éteinte** pendant les silences
@@ -148,7 +148,7 @@ La LED s'allume et s'éteint au rythme de la musique :
 
 ---
 
-## 🎓 Concepts MicroPython utilisés
+##  Concepts MicroPython utilisés
 
 ### Version de base
 - **PWM (Pulse Width Modulation)** : Pour générer les fréquences sonores du buzzer
@@ -157,14 +157,6 @@ La LED s'allume et s'éteint au rythme de la musique :
 - **Boucles infinies** : `while True` pour jouer la mélodie en continu
 - **Listes de tuples** : Pour stocker les notes (fréquence, durée)
 
-### Bonus 1
-- **GPIO Digital Input** : Pour lire l'état du bouton
-- **Anti-rebond logiciel** : Technique de debouncing avec `time.ticks_ms()` et `time.ticks_diff()`
-- **Détection de front montant** : Comparaison de l'état actuel et précédent du bouton
-- **Variables globales** : Pour gérer l'état du programme entre les appels de fonctions
-- **Modulo** : `(melodie_actuelle + 1) % 3` pour cycler entre les mélodies
-
-### Bonus 2
 - **GPIO Digital Output** : Pour contrôler la LED
 - **Synchronisation** : Coordination entre le buzzer et la LED
 - **Effets visuels** : Boucles pour créer des patterns de clignotement
