@@ -1,0 +1,109 @@
+#  Exercice 5 : Horloge avec Raspberry Pi Pico W et Servo Moteur
+
+## Objectif
+
+Dans cet exercice, on réalise une **horloge connectée** en utilisant un **Raspberry Pi Pico W** et un **servo moteur**.
+Le Pico W se connecte à Internet pour récupérer l’heure actuelle via le **protocole NTP** et oriente le servo selon l’heure, simulant le mouvement d’une aiguille d’horloge.
+
+---
+
+##  Matériel requis
+
+* Raspberry Pi Pico W
+* Servo moteur (5 V, compatible PWM)
+* Fils de connexion (jumper)
+* Alimentation 5 V (ou USB + source externe pour le servo)
+
+---
+
+##  Étapes du projet
+
+### 1️⃣ Connexion à Internet
+
+Le Pico W se connecte à un réseau Wi-Fi grâce à la bibliothèque **`network`**.
+L’heure actuelle est ensuite récupérée depuis Internet via le module **`ntptime`**, qui synchronise l’horloge interne du microcontrôleur.
+
+### 2️⃣ Calcul de l’angle du servo
+
+Le servo peut tourner de **0° à 180°**, représentant un **cadran de 12 heures** :
+
+| Heure         | Angle (°) |
+| :------------ | :-------: |
+| 12 h          |     0°    |
+| 1 h           |    15°    |
+| 2 h           |    30°    |
+| 3 h           |    45°    |
+| 4 h           |    60°    |
+| 5 h           |    75°    |
+| 6 h           |    90°    |
+| 7 h           |    105°   |
+| 8 h           |    120°   |
+| 9 h           |    135°   |
+| 10 h          |    150°   |
+| 11 h          |    165°   |
+| 12 h (retour) |    180°   |
+
+Formule utilisée :
+[
+\text{Angle (\u00b0)} = \bigg(\text{Heure mod 12} + \frac{\text{Minutes}}{60} + \frac{\text{Secondes}}{3600}\bigg) \times 15
+]
+
+### 3️⃣ Contrôle du servo
+
+Le module **`machine`** est utilisé pour piloter le servo via **PWM (50 Hz)**.
+L’angle calculé est converti en largeur d’impulsion (\u00b5s) comprise entre **500 µs (0°)** et **2500 µs (180°)**.
+Le servo se positionne automatiquement à la bonne heure.
+
+---
+
+## 🔌 Schéma de câblage
+
+
+---
+
+##  Fonctionnement du programme
+
+1. Connexion au réseau Wi-Fi.
+2. Synchronisation de l’heure via le serveur NTP.
+3. Calcul de l’angle correspondant à l’heure locale.
+4. Positionnement automatique du servo.
+5. Répétition automatique (mise à jour périodique possible).
+
+---
+
+## 📄 Exemple d’affichage dans Thonny
+
+```
+Connexion à: Nom_du_WIFI
+✓ CONNECTÉ!
+IP:Adresse_IP
+Synchronisation avec le serveur NTP...
+Heure synchronisée avec Internet !
+Heure locale actuelle : 15:30:00
+Angle calculé : 82.5 °
+→ Servo positionné à 82.5° (pulse = 1583 µs)
+ Le servo est maintenant positionné selon l’heure actuelle !
+```
+
+---
+
+##  Code principal
+
+Le script complet combine :
+
+* la connexion Wi-Fi (`network`)
+* la synchronisation NTP (`ntptime`)
+* le calcul de l’angle (`calcul_angle()`)
+* le pilotage PWM du servo (`set_servo()`)
+
+---
+
+## 🧾 Conclusion
+
+Ce projet démontre l’intégration entre :
+
+* **la connectivité Internet du Pico W**,
+* **la gestion du temps via NTP**,
+* **et le contrôle PWM du servo moteur**.
+
+Le résultat est une **horloge connectée simple et fonctionnelle**, illustrant la synchronisation et la conversion d’informations numériques en mouvement mécanique.
